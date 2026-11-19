@@ -1,0 +1,1622 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff8f1">
+<title>Defa & Ruspendi — Wedding Invitation</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Lora:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --ivory:#fff8f1;
+    --blush:#f2d9d2;
+    --rose:#d9ada5;
+    --sage:#899078;
+    --olive:#70765c;
+    --gold:#c6a477;
+    --brown:#76513d;
+    --ink:#604b3d;
+    --beige:#eadccf;
+    --white:#fffdfa;
+}
+
+* {
+    box-sizing:border-box;
+}
+
+html {
+    scroll-behavior:smooth;
+}
+
+body {
+    margin:0;
+    background:var(--ivory);
+    color:var(--ink);
+    font-family:'Lora',serif;
+    line-height:1.7;
+}
+
+button,input,textarea {
+    font:inherit;
+}
+
+button {
+    cursor:pointer;
+}
+
+a {
+    color:inherit;
+}
+
+.script {
+    font-family:'Great Vibes',cursive;
+    font-weight:400;
+}
+
+.serif {
+    font-family:'Cormorant Garamond',serif;
+}
+
+.mont {
+    font-family:'Montserrat',sans-serif;
+}
+
+.container {
+    width:min(100% - 34px,680px);
+    margin:auto;
+}
+
+.section {
+    padding:76px 0;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.kicker {
+    font:500 10px 'Montserrat',sans-serif;
+    letter-spacing:3px;
+    color:var(--sage);
+    text-transform:uppercase;
+}
+
+h2 {
+    font:italic 500 clamp(35px,8vw,48px) 'Cormorant Garamond',serif;
+    margin:8px 0 18px;
+    color:var(--brown);
+}
+
+p {
+    margin:8px auto;
+    max-width:540px;
+}
+
+.flower {
+    color:var(--rose);
+    font-size:24px;
+    letter-spacing:8px;
+    margin:10px 0;
+}
+
+.btn {
+    border:0;
+    border-radius:999px;
+    background:var(--olive);
+    color:white;
+    padding:13px 24px;
+    font:500 11px 'Montserrat',sans-serif;
+    letter-spacing:1px;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    box-shadow:0 7px 18px #70765c30;
+    transition:.2s;
+}
+
+.btn:hover {
+    transform:translateY(-2px);
+    background:#60684f;
+}
+
+.btn:disabled {
+    opacity:.35;
+    cursor:not-allowed;
+    transform:none;
+}
+
+.btn-outline {
+    background:transparent;
+    color:var(--olive);
+    border:1px solid var(--olive);
+    box-shadow:none;
+}
+
+/* HALAMAN PEMBUKAAN */
+
+.cover {
+    min-height:100svh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:34px 20px;
+    position:relative;
+    overflow:hidden;
+    background:
+        radial-gradient(ellipse at 15% 10%,#f2d9d2 0,transparent 35%),
+        radial-gradient(ellipse at 90% 90%,#e8d8cb 0,transparent 34%),
+        linear-gradient(145deg,#fffaf5,#f7e9e2);
+}
+
+.cover:before,
+.cover:after {
+    content:"";
+    position:absolute;
+    width:240px;
+    height:240px;
+    border:1px solid #c6a47780;
+    border-radius:50%;
+    pointer-events:none;
+}
+
+.cover:before {
+    top:-145px;
+    left:-100px;
+}
+
+.cover:after {
+    bottom:-150px;
+    right:-100px;
+}
+
+.cover-inner {
+    max-width:520px;
+    width:100%;
+    padding:42px 20px;
+    border:1px solid #c6a47788;
+    outline:5px double #c6a47735;
+    outline-offset:7px;
+    position:relative;
+    background:#fff8f1a8;
+}
+
+.botanical {
+    font-size:42px;
+    line-height:1.3;
+    color:var(--sage);
+    letter-spacing:8px;
+}
+
+.cover h1 {
+    font:clamp(60px,15vw,94px)/.95 'Great Vibes',cursive;
+    color:var(--brown);
+    margin:24px 0 18px;
+}
+
+.cover-date {
+    letter-spacing:4px;
+    font:12px 'Montserrat',sans-serif;
+    margin:22px 0;
+    color:var(--brown);
+}
+
+.cover-quote {
+    font-style:italic;
+    font-size:14px;
+    color:#8a715c;
+    margin:20px auto 28px;
+}
+
+/* KONTEN UNDANGAN */
+
+#mainInvitation {
+    display:none;
+}
+
+#mainInvitation.show {
+    display:block;
+}
+
+.hero-strip {
+    height:180px;
+    background:
+        linear-gradient(#fff8f1aa,#fff8f1aa),
+        url('https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=1200&q=80') center/cover;
+}
+
+.intro {
+    background:linear-gradient(180deg,#f8eee8,var(--ivory));
+}
+
+.card {
+    background:#fffaf5;
+    border:1px solid #e6d3c4;
+    border-radius:18px;
+    padding:22px 18px;
+    box-shadow:0 8px 24px #76513d0c;
+}
+
+/* DETAIL ACARA */
+
+.event-grid {
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+    margin:26px auto;
+    max-width:520px;
+}
+
+.event-card .symbol {
+    font-size:25px;
+    color:var(--gold);
+}
+
+.event-card h3 {
+    font:500 30px 'Cormorant Garamond',serif;
+    margin:5px;
+}
+
+.event-card .date {
+    font:500 11px 'Montserrat',sans-serif;
+    letter-spacing:1px;
+    color:var(--sage);
+}
+
+/* COUNTDOWN */
+
+.countdown {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:8px;
+    max-width:480px;
+    margin:25px auto;
+}
+
+.timebox {
+    background:#fffaf5;
+    border:1px solid #eadccf;
+    border-radius:12px;
+    padding:12px 4px;
+}
+
+.timebox strong {
+    display:block;
+    font:500 clamp(24px,6vw,34px) 'Cormorant Garamond',serif;
+    color:var(--brown);
+}
+
+.timebox span {
+    font:9px 'Montserrat',sans-serif;
+    letter-spacing:1px;
+    color:var(--sage);
+}
+
+/* LOVE STORY DAN GALERI */
+
+.story {
+    background:#f7eee8;
+}
+
+.gallery {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin:24px auto;
+    max-width:560px;
+}
+
+.gallery img {
+    width:100%;
+    height:190px;
+    object-fit:cover;
+    border-radius:13px;
+}
+
+.gallery img:first-child {
+    grid-column:span 2;
+    height:260px;
+}
+
+/* TURUT MENGUNDANG */
+
+.people {
+    font-size:14px;
+    color:#8a715c;
+}
+
+.guest-list {
+    max-width:500px;
+    margin:22px auto;
+    padding:0;
+    list-style:none;
+    text-align:left;
+}
+
+.guest-list li {
+    background:#fffaf5;
+    border:1px solid #e6d3c4;
+    border-radius:12px;
+    padding:12px 16px;
+    margin:9px 0;
+    font-size:14px;
+    color:#8a715c;
+}
+
+/* RSVP */
+
+.rsvp-form {
+    max-width:500px;
+    margin:24px auto;
+    text-align:left;
+}
+
+label {
+    display:block;
+    font:500 10px 'Montserrat',sans-serif;
+    letter-spacing:1px;
+    margin:14px 0 6px;
+    color:var(--sage);
+}
+
+input,textarea,select {
+    width:100%;
+    padding:13px;
+    border:1px solid #ddcabb;
+    border-radius:10px;
+    background:#fffdfa;
+    color:var(--ink);
+    outline:none;
+}
+
+textarea {
+    min-height:100px;
+    resize:vertical;
+}
+
+.radio-line {
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+    font-size:13px;
+}
+
+.radio-line label {
+    font:13px 'Lora',serif;
+    letter-spacing:0;
+    color:var(--ink);
+    display:flex;
+    align-items:center;
+    gap:7px;
+}
+
+.radio-line input {
+    width:auto;
+}
+
+/* FOOTER */
+
+footer {
+    padding:70px 20px;
+    text-align:center;
+    background:linear-gradient(140deg,#f1ded7,#fff8f1);
+    position:relative;
+}
+
+footer .script {
+    font-size:58px;
+    color:var(--brown);
+}
+
+.notice {
+    font-size:11px;
+    color:#9a8878;
+    margin-top:10px;
+}
+
+.divider {
+    height:1px;
+    width:90px;
+    background:var(--gold);
+    margin:22px auto;
+}
+
+/* NAVIGASI MULTI HALAMAN */
+
+.page-panel {
+    display:none;
+}
+
+.page-panel.active {
+    display:block;
+    animation:pageFade .35s ease;
+}
+
+@keyframes pageFade {
+    from {
+        opacity:0;
+        transform:translateY(8px);
+    }
+    to {
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.page-nav {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:8px;
+    max-width:520px;
+    margin:28px auto;
+    padding:0 16px;
+}
+
+.page-nav .btn {
+    min-width:110px;
+}
+
+.page-number {
+    font:10px 'Montserrat',sans-serif;
+    letter-spacing:1px;
+    color:var(--sage);
+    text-align:center;
+}
+
+/* TOMBOL MUSIK */
+
+.music {
+    position:fixed;
+    right:15px;
+    bottom:15px;
+    z-index:20;
+    border:1px solid #d8c5b5;
+    background:#fffaf2;
+    color:var(--brown);
+    border-radius:50px;
+    padding:11px 15px;
+    box-shadow:0 5px 20px #0001;
+    font:11px 'Montserrat',sans-serif;
+}
+
+/* ANIMASI TUTUP UNDANGAN */
+
+#mainInvitation.is-closing {
+    transform-origin:top center;
+    animation:invitationClose .8s ease-in forwards;
+    pointer-events:none;
+}
+
+@keyframes invitationClose {
+    0% {
+        opacity:1;
+        transform:perspective(900px) rotateX(0deg) scale(1);
+    }
+
+    50% {
+        opacity:.8;
+        transform:perspective(900px) rotateX(-8deg) scale(.95);
+    }
+
+    100% {
+        opacity:0;
+        transform:perspective(900px) rotateX(15deg) scale(.8);
+    }
+}
+
+/* ANIMASI KEMBALI KE SAMPUL */
+
+#cover.is-opening-again {
+    animation:coverReopen .7s ease-out both;
+}
+
+@keyframes coverReopen {
+    from {
+        opacity:0;
+        transform:scale(.95);
+    }
+
+    to {
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+/* RESPONSIVE */
+
+@media(min-width:600px) {
+    .event-grid {
+        grid-template-columns:1fr 1fr;
+    }
+
+    .section {
+        padding:90px 0;
+    }
+
+    .gallery img {
+        height:240px;
+    }
+
+    .gallery img:first-child {
+        height:330px;
+    }
+}
+
+@media(max-width:380px) {
+    .page-nav {
+        gap:5px;
+        padding:0 8px;
+    }
+
+    .page-nav .btn {
+        min-width:90px;
+        padding:11px 12px;
+        font-size:9px;
+    }
+
+    .page-number {
+        font-size:8px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ==========================
+     HALAMAN PEMBUKAAN
+========================== -->
+
+<section class="cover" id="cover">
+
+    <div class="cover-inner">
+
+        <div class="botanical">❀ ✿ ❀</div>
+
+        <div class="kicker">
+            The Wedding Celebration Of
+        </div>
+
+        <h1>
+            Dede<span style="font-size:.65em"> &</span> Ruspendi
+        </h1>
+
+        <div class="cover-date">
+            SENIN · 14 · DESEMBER · 2026
+        </div>
+
+        <p class="cover-quote">
+            “Two souls, one beautiful journey,
+            <br>and a lifetime of love.”
+        </p>
+
+        <p class="kicker" style="margin-bottom:18px">
+            Kepada Yth. Bapak/Ibu/Saudara/i
+        </p>
+
+        <button class="btn" id="openInvite">
+            ✉ &nbsp; BUKA UNDANGAN
+        </button>
+
+        <p class="notice">
+            Mohon maaf apabila terdapat kesalahan penulisan nama/gelar.
+        </p>
+
+        <div class="botanical" style="margin-top:22px;font-size:30px">
+            ❧
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================
+     ISI UNDANGAN
+========================== -->
+
+<main id="mainInvitation">
+
+    <!-- HALAMAN 1: PEMBUKAAN DAN COUNTDOWN -->
+
+    <div class="page-panel active" data-page="1">
+
+        <div class="hero-strip"></div>
+
+        <section class="section intro">
+
+            <div class="container">
+
+                <div class="flower">❀ ✿ ❀</div>
+
+                <div class="kicker">
+                    Assalamu’alaikum Warahmatullahi Wabarakatuh
+                </div>
+
+                <p>
+                    Dengan memanjatkan puji dan syukur ke hadirat
+                    Allah Subhanahu wa Ta’ala, serta memohon rahmat
+                    dan ridha-Nya, kami bermaksud menyelenggarakan
+                    acara pernikahan putra-putri kami:
+                </p>
+
+                <h2 class="script" style="font-size:62px">
+                    Dede Fatimah, S.E
+                </h2>
+
+                <p>
+                    Putri Bungsu dari Bapak Oyan Royani
+                    dan Ibu Siti Khodijah (Almh)
+                </p>
+
+                <h2 class="script" style="font-size:62px">
+                    Ruspendi
+                </h2>
+
+                <p>
+                    Putra Ke-6 dari Bapak Yayan Royani (Alm)
+                    dan Ibu Titi Suryati
+                </p>
+
+                <div class="divider"></div>
+
+                <div class="kicker">
+                    Counting Down To Our Special Day
+                </div>
+
+                <div class="countdown" aria-label="Hitung mundur pernikahan">
+
+                    <div class="timebox">
+                        <strong id="days">00</strong>
+                        <span>HARI</span>
+                    </div>
+
+                    <div class="timebox">
+                        <strong id="hours">00</strong>
+                        <span>JAM</span>
+                    </div>
+
+                    <div class="timebox">
+                        <strong id="minutes">00</strong>
+                        <span>MENIT</span>
+                    </div>
+
+                    <div class="timebox">
+                        <strong id="seconds">00</strong>
+                        <span>DETIK</span>
+                    </div>
+
+                </div>
+
+                <div class="flower">— ❧ —</div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- HALAMAN 2: DETAIL ACARA -->
+
+    <div class="page-panel" data-page="2">
+
+        <section class="section">
+
+            <div class="container">
+
+                <div class="kicker">
+                    With the blessing of our families
+                </div>
+
+                <h2>Detail Acara</h2>
+
+                <div class="event-grid">
+
+                    <article class="card event-card">
+
+                        <div class="symbol">♕</div>
+
+                        <h3>Akad Nikah</h3>
+
+                        <div class="date">
+                            Senin, 14 DESEMBER 2026
+                        </div>
+
+                        <p>Pukul 08.00 WIB – Selesai</p>
+
+                    </article>
+
+                    <article class="card event-card">
+
+                        <div class="symbol">♡</div>
+
+                        <h3>Resepsi</h3>
+
+                        <div class="date">
+                            Senin, 14 DESEMBER 2026
+                        </div>
+
+                        <p>Pukul 10.00 – Selesai</p>
+
+                    </article>
+
+                </div>
+
+                <div class="card">
+
+                    <div class="symbol">⌖</div>
+
+                    <h3 class="serif" style="font-size:28px;margin:5px">
+                        Kp. Rawajamun RT 005/004
+                    </h3>
+
+                    <p>
+                        Desa Muarasari, Kecamatan Bogor Selatan,
+                        Kota Bogor.
+                    </p>
+
+                    <a class="btn"
+                       id="mapsButton"
+                       href="https://maps.app.goo.gl/ZcLSFoCFniKxqpVj6"
+                       target="_blank"
+                       rel="noopener">
+
+                        ⌖ &nbsp; BUKA GOOGLE MAPS
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- HALAMAN 3: LOVE STORY -->
+
+    <div class="page-panel" data-page="3">
+
+        <section class="section story">
+
+            <div class="container">
+
+                <div class="flower">❀</div>
+
+                <div class="kicker">
+                    A little story about us
+                </div>
+
+                <h2>Our Love Story</h2>
+
+                <p>
+                    Setiap pertemuan memiliki cerita.
+                    Dari dua perjalanan yang berbeda, kami
+                    dipertemukan untuk memulai perjalanan baru
+                    bersama. Dengan penuh rasa syukur, kami
+                    mengundang Anda menjadi bagian dari hari
+                    istimewa ini.
+                </p>
+
+                <div class="divider"></div>
+
+                <div class="gallery">
+
+                    <img
+                        src="foto 5.jfif"
+                        alt="foto 1">
+
+                    <img
+                        src="foto 2.jfif"
+                        alt="Buket bunga pernikahan">
+
+                    <img
+                        src="foto 3.jfif"
+                        alt="Detail dekorasi pernikahan">
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- HALAMAN 4: TURUT MENGUNDANG -->
+
+    <div class="page-panel" data-page="4">
+
+        <section class="section">
+
+            <div class="container">
+
+                <div class="kicker">
+                    With love and gratitude
+                </div>
+
+                <h2>Turut Mengundang</h2>
+
+                <p class="people">
+                    Dengan hormat, kami memohon doa restu
+                    dari keluarga dan kerabat yang turut mengundang:
+                </p>
+
+                <h3 class="serif"
+                    style="font-size:26px;color:var(--brown);margin:22px 0 8px">
+
+                    Keluarga Mempelai Pria
+
+                </h3>
+
+                <ul class="guest-list">
+
+                    <li>Keluarga Besar Bpk. Van Huriawan (Ketua RT 006)</li>
+
+                    <li>Keluarga Besar Bpk. Hendrik Kuswoyo (Ketua RT 002)</li>
+
+                    <li>Ust. Abdul Jabar</li>
+
+                    <li>Ust. Fauzi</li>
+
+                    <li>Kel. Besar Bpk. Udin (Paman)</li>
+
+                    <li>Kel. Besar Bpk. Ujang (Paman)</li>
+
+                    <li>Kel. Besar Bpk. Beni Suryadi (Kakak)</li>
+
+                    <li>Kel. Besar Bpk. Nandi Supriyadi (Kakak)</li>
+
+                    <li>Kel. Besar Bpk. Azam (Kakak Ipar)</li>
+
+                    <li>Kel. Besar Bpk. Handi Rohandi (Kakak)</li>
+
+                    <li>Sdr. Romi Firdaus (Adik)</li>
+
+                    <li>Kel. Besar Bpk. Wawan Kusbianto (Godeg)</li>
+
+                </ul>
+
+
+                <h3 class="serif"
+                    style="font-size:26px;color:var(--brown);margin:22px 0 8px">
+
+                    Keluarga Mempelai Wanita
+
+                </h3>
+
+                <ul class="guest-list">
+
+                    <li>Kel. Besar H. Ma'sum (Paman)</li>
+
+                    <li>Kel. Besar Bpk. Mas'ud (Kakak)</li>
+
+                    <li>Kel. Besar Ibu Ai Marlina, S.Si (Kakak)</li>
+
+                    <li>KeL. Besar Bpk. Samsu</li>
+
+                    <li>Kel. Besar Bpk. H. Sobari</li>
+
+                    <li>Kel. Besar SMA Negeri 01 Caringin</li>
+
+                    <Li>Kel. Besar PT. PrimaPack Mitra Utama</Li>
+
+                    <li>THE SWAGGIRLS</li>
+
+                </ul>
+
+                <div class="divider"></div>
+
+                <p class="people">
+                    Serta keluarga besar kedua mempelai
+                    yang tidak dapat kami sebutkan satu per satu.
+                </p>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- HALAMAN 5: RSVP -->
+
+    <div class="page-panel" data-page="5">
+
+        <section class="section story" id="rsvp">
+
+            <div class="container">
+
+                <div class="kicker">
+                    Your presence means a lot
+                </div>
+
+                <h2>Konfirmasi Kehadiran</h2>
+
+                <p>
+                    Mohon konfirmasi kehadiran dan tuliskan
+                    doa terbaik untuk kedua mempelai.
+                </p>
+
+                <form class="rsvp-form card" id="rsvpForm">
+
+                    <label for="guestName">NAMA</label>
+
+                    <input
+                        id="guestName"
+                        name="name"
+                        placeholder="Nama lengkap Anda"
+                        required>
+
+
+                    <label>KONFIRMASI KEHADIRAN</label>
+
+                    <div class="radio-line">
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="attendance"
+                                value="Hadir"
+                                checked>
+
+                            InsyaAllah hadir
+                        </label>
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="attendance"
+                                value="Tidak hadir">
+
+                            Mohon maaf, tidak dapat hadir
+                        </label>
+
+                    </div>
+
+
+                    <label for="guestCount">JUMLAH TAMU</label>
+
+                    <select id="guestCount" name="count">
+
+                        <option>1 orang</option>
+                        <option>2 orang</option>
+                        <option>3 orang</option>
+                        <option>4 orang</option>
+
+                    </select>
+
+
+                    <label for="message">UCAPAN & DOA</label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Tuliskan doa dan ucapan terbaik...">
+                    </textarea>
+
+
+                    <button
+                        class="btn"
+                        type="submit"
+                        style="width:100%">
+
+                        ♡ &nbsp; KIRIM KONFIRMASI
+
+                    </button>
+
+                    <p class="notice">
+                        Konfirmasi akan dikirim melalui WhatsApp.
+                    </p>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- HALAMAN 6: PENUTUP -->
+
+    <div class="page-panel" data-page="6">
+
+        <footer>
+
+            <div class="botanical">❀ ✿ ❀</div>
+
+            <div class="kicker">
+                Thank you for being part of our story
+            </div>
+
+            <div class="script">
+                Terima Kasih
+            </div>
+
+            <p>
+                Merupakan suatu kehormatan dan kebahagiaan
+                bagi kami apabila Bapak/Ibu/Saudara/i
+                berkenan hadir dan memberikan doa restu.
+            </p>
+
+            <div class="divider"></div>
+
+            <div class="script" style="font-size:48px">
+                Defa & Ruspendi
+            </div>
+
+            <div class="flower">♡</div>
+
+            <div class="kicker">
+                With love, the bride & groom
+            </div>
+
+        </footer>
+
+    </div>
+
+</main>
+
+
+<!-- ==========================
+     AUDIO / MUSIK
+========================== -->
+
+<!-- Letakkan file MP3 di folder yang sama dengan index.html -->
+
+<audio id="weddingAudio" loop preload="auto">
+
+    <source
+        src="Ketika Cinta Bertasbih _ Guitar Instrumental.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+<button
+    class="music"
+    id="musicToggle"
+    style="display:none"
+    aria-label="Putar atau jeda musik">
+
+    ♫ Musik: <span id="musicState">Play</span>
+
+</button>
+
+
+<!-- ==========================
+     JAVASCRIPT
+========================== -->
+
+<script>
+
+/* =================================
+   DATA YANG PERLU KAMU GANTI
+================================= */
+
+// Tanggal pernikahan
+const WEDDING_DATE = new Date(
+    "2026-12-14T08:00:00+07:00"
+);
+
+// Nomor WhatsApp tujuan
+// Format: 628xxxxxxxxxx
+const WHATSAPP_NUMBER = "6285714486274";
+
+// Link Google Maps
+const MAPS_URL =
+    "https://maps.app.goo.gl/ZcLSFoCFniKxqpVj6";
+
+
+/* =================================
+   PENGATURAN MUSIK
+================================= */
+
+const audio = document.getElementById("weddingAudio");
+
+const musicButton = document.getElementById("musicToggle");
+
+const musicState = document.getElementById("musicState");
+
+
+function updateMusicLabel() {
+
+    const playing = !audio.paused;
+
+    musicState.textContent = playing ? "Pause" : "Play";
+
+    musicButton.setAttribute(
+        "aria-label",
+        playing ? "Jeda musik" : "Putar musik"
+    );
+
+}
+
+
+async function tryPlayMusic() {
+
+    try {
+
+        await audio.play();
+
+    } catch(e) {
+
+        // Browser mungkin memblokir autoplay.
+
+    }
+
+    updateMusicLabel();
+
+}
+
+
+// Percobaan autoplay
+document.addEventListener("DOMContentLoaded", tryPlayMusic);
+
+
+// Memulai musik setelah interaksi pertama
+document.addEventListener("click", function firstInteraction() {
+
+    if (audio.paused) {
+        tryPlayMusic();
+    }
+
+    document.removeEventListener("click", firstInteraction);
+
+});
+
+
+/* =================================
+   NAVIGASI MULTI HALAMAN
+================================= */
+
+const invitationPages = Array.from(
+    document.querySelectorAll(
+        "#mainInvitation .page-panel"
+    )
+);
+
+let currentPage = 0;
+
+
+// Fungsi menampilkan halaman
+function showInvitationPage(index) {
+
+    if (
+        index < 0 ||
+        index >= invitationPages.length
+    ) {
+        return;
+    }
+
+    currentPage = index;
+
+
+    // Tampilkan halaman yang dipilih
+    invitationPages.forEach((page, i) => {
+
+        page.classList.toggle(
+            "active",
+            i === currentPage
+        );
+
+    });
+
+
+    // Membuat tombol navigasi setiap halaman
+    invitationPages.forEach((page, i) => {
+
+        let nav = page.querySelector(".page-nav");
+
+        if (!nav) {
+
+            nav = document.createElement("div");
+
+            nav.className = "page-nav";
+
+            page.appendChild(nav);
+
+        }
+
+
+        // Jika halaman terakhir, tampilkan tombol Close
+        // Selain itu, tampilkan tombol Next
+
+        nav.innerHTML = `
+
+            <button
+                class="btn btn-outline page-prev"
+                type="button"
+                ${i === 0 ? "disabled" : ""}>
+
+                ← Previous
+
+            </button>
+
+
+            <span class="page-number">
+
+                HALAMAN ${i + 1} / ${invitationPages.length}
+
+            </span>
+
+
+            ${
+                i === invitationPages.length - 1
+
+                ?
+
+                `<button
+                    class="btn page-close"
+                    type="button">
+
+                    ✕ Tutup Undangan
+
+                </button>`
+
+                :
+
+                `<button
+                    class="btn page-next"
+                    type="button">
+
+                    Next →
+
+                </button>`
+            }
+
+        `;
+
+
+        // Tombol Previous
+        nav.querySelector(".page-prev").addEventListener(
+            "click",
+            () => {
+
+                showInvitationPage(currentPage - 1);
+
+            }
+        );
+
+
+        // Tombol Next
+        const nextButton = nav.querySelector(".page-next");
+
+        if (nextButton) {
+
+            nextButton.addEventListener(
+                "click",
+                () => {
+
+                    showInvitationPage(currentPage + 1);
+
+                }
+            );
+
+        }
+
+
+        // Tombol Close
+        const closeButton = nav.querySelector(".page-close");
+
+        if (closeButton) {
+
+            closeButton.addEventListener(
+                "click",
+                closeInvitation
+            );
+
+        }
+
+    });
+
+
+    // Kembali ke posisi atas halaman
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+}
+
+
+// Tampilkan halaman pertama
+showInvitationPage(0);
+
+
+/* =================================
+   FUNGSI TUTUP UNDANGAN
+================================= */
+
+function closeInvitation() {
+
+    const main = document.getElementById(
+        "mainInvitation"
+    );
+
+    const cover = document.getElementById(
+        "cover"
+    );
+
+
+    // Jalankan animasi penutupan
+    main.classList.add("is-closing");
+
+
+    // Tunggu sampai animasi selesai
+    setTimeout(() => {
+
+
+        // Sembunyikan isi undangan
+        main.classList.remove(
+            "show",
+            "is-closing"
+        );
+
+
+        // Tampilkan kembali halaman sampul
+        cover.style.display = "flex";
+
+
+        // Jalankan animasi sampul
+        cover.classList.remove(
+            "is-opening-again"
+        );
+
+        void cover.offsetWidth;
+
+        cover.classList.add(
+            "is-opening-again"
+        );
+
+
+        // Reset halaman ke halaman pertama
+        showInvitationPage(0);
+
+
+        // Kembali ke bagian paling atas
+        window.scrollTo({
+
+            top:0,
+
+            behavior:"smooth"
+
+        });
+
+
+    }, 800);
+
+}
+
+
+/* =================================
+   TOMBOL BUKA UNDANGAN
+================================= */
+
+document.getElementById("openInvite").addEventListener(
+    "click",
+    async () => {
+
+        // Sembunyikan sampul
+        document.getElementById("cover").style.display = "none";
+
+
+        // Tampilkan isi undangan
+        document.getElementById("mainInvitation").classList.add("show");
+
+
+        // Tampilkan tombol musik
+        musicButton.style.display = "block";
+
+
+        // Putar musik
+        await tryPlayMusic();
+
+
+        // Mulai dari halaman pertama
+        showInvitationPage(0);
+
+
+        window.scrollTo({
+
+            top:0,
+
+            behavior:"smooth"
+
+        });
+
+    }
+);
+
+
+/* =================================
+   TOMBOL PLAY / PAUSE MUSIK
+================================= */
+
+musicButton.addEventListener("click", async () => {
+
+    if (audio.paused) {
+
+        await tryPlayMusic();
+
+    } else {
+
+        audio.pause();
+
+    }
+
+    updateMusicLabel();
+
+});
+
+
+audio.addEventListener(
+    "play",
+    updateMusicLabel
+);
+
+audio.addEventListener(
+    "pause",
+    updateMusicLabel
+);
+
+
+/* =================================
+   COUNTDOWN PERNIKAHAN
+================================= */
+
+function updateCountdown() {
+
+    const now = new Date();
+
+    let diff = Math.max(
+        0,
+        WEDDING_DATE - now
+    );
+
+
+    // Hitung hari
+    const d = Math.floor(
+        diff / 86400000
+    );
+
+    diff %= 86400000;
+
+
+    // Hitung jam
+    const h = Math.floor(
+        diff / 3600000
+    );
+
+    diff %= 3600000;
+
+
+    // Hitung menit
+    const m = Math.floor(
+        diff / 60000
+    );
+
+    diff %= 60000;
+
+
+    // Hitung detik
+    const s = Math.floor(
+        diff / 1000
+    );
+
+
+    // Tampilkan hasil countdown
+    document.getElementById("days").textContent =
+        String(d).padStart(2, "0");
+
+    document.getElementById("hours").textContent =
+        String(h).padStart(2, "0");
+
+    document.getElementById("minutes").textContent =
+        String(m).padStart(2, "0");
+
+    document.getElementById("seconds").textContent =
+        String(s).padStart(2, "0");
+
+}
+
+
+// Jalankan countdown
+updateCountdown();
+
+setInterval(
+    updateCountdown,
+    1000
+);
+
+
+/* =================================
+   GOOGLE MAPS
+================================= */
+
+document.getElementById("mapsButton").href =
+    MAPS_URL;
+
+
+/* =================================
+   FORM RSVP WHATSAPP
+================================= */
+
+document.getElementById("rsvpForm").addEventListener(
+    "submit",
+    function(e) {
+
+        e.preventDefault();
+
+
+        // Ambil data formulir
+        const name = document.getElementById(
+            "guestName"
+        ).value.trim();
+
+
+        const attendance = document.querySelector(
+            'input[name="attendance"]:checked'
+        ).value;
+
+
+        const count = document.getElementById(
+            "guestCount"
+        ).value;
+
+
+        const message = document.getElementById(
+            "message"
+        ).value.trim() || "-";
+
+
+        // Susun pesan WhatsApp
+        const text =
+            `Assalamu'alaikum, saya ${name}.\n` +
+            `Konfirmasi: ${attendance}\n` +
+            `Jumlah tamu: ${count}\n` +
+            `Ucapan: ${message}`;
+
+
+        // Validasi nomor WhatsApp
+        if (
+            !/^62\d{8,15}$/.test(WHATSAPP_NUMBER)
+        ) {
+
+            alert(
+                "Periksa kembali nomor WhatsApp pada bagian DATA YANG PERLU KAMU GANTI."
+            );
+
+            return;
+
+        }
+
+
+        // Buka WhatsApp
+        const whatsappURL =
+            `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+
+        window.open(
+            whatsappURL,
+            "_blank"
+        );
+
+    }
+);
+
+</script>
+
+</body>
+</html>
